@@ -1,6 +1,9 @@
 # first layer
 FROM node:17-alpine
 
+# install nodemon
+RUN npm install -g nodemon
+
 # specify working directory
 WORKDIR /app
 
@@ -17,7 +20,7 @@ COPY . .
 EXPOSE 4000
 
 # run on container
-CMD ["node", "app.js"]
+CMD ["npm", "run", "dev"]
 
 
 # build:
